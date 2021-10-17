@@ -49,7 +49,9 @@ int main()
     s_ponto *pontos;
     pontos = (s_ponto *)calloc(total_pontos, sizeof(s_ponto));
 
-    for (int i = 0; i < total_pontos; i++)
+    srand(time(NULL));
+
+    for (int i = 0; i < total_pontos; i++) // Geração de números aleatorios com intuito de testes
     {
         x = rand() % 100;
         y = rand() % 100;
