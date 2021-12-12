@@ -26,8 +26,7 @@ int main()
 
     if (alunos == NULL)
     {
-        printf("\n [ERROR] Memoria insuficiente, encerrando programa.\n");
-        system("pause");
+        printf("\n [ERROR] Memoria insuficiente, encerrando programa.\n\n");
         exit(1);
     }
 
