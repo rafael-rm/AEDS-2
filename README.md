@@ -16,7 +16,7 @@ Aprendizados de Algoritimos e Estruturas de Dados II no segundo período de Enge
 * Árvores: formas de representação, recursão em árvores, árvores binárias, árvores binárias de busca, listas de prioridades, árvores balanceadas.
 * Práticas de Laboratório
 
-_Docente: [Edwaldo Soares Rodrigues](http://buscatextual.cnpq.br/buscatextual/visualizacv.do;jsessionid=CA61ACF95E04AE502CFEB911885E6B8C.buscatextual_65)_
+_Docente: [Edwaldo Soares Rodrigues](http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4454835D2)_
 
 
 ## Referência
