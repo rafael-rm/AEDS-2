@@ -9,9 +9,11 @@ void manipular_jogo(int jogador)
     // Função usada para testes
     mao[jogador].carta[0].cor = 0;
     mao[jogador].carta[0].numero = TROCAR_COR;
-    mao[jogador].carta[1].cor = 1;
-    mao[jogador].carta[1].numero = 12;
-    mao[jogador].tamanho = 1;
+    mao[jogador].carta[1].cor = 0;
+    mao[jogador].carta[1].numero = COME_4;
+    mao[jogador].carta[2].cor = 0;
+    mao[jogador].carta[2].numero = TROCAR_COR;
+    mao[jogador].tamanho = 3;
     mao[jogador].fim = mao[jogador].tamanho - 1;
 
     /*
@@ -187,7 +189,7 @@ void carta_especial(int jogador, int numero_jogar)
 {
     if (numero_jogar == INVERTER)
     {
-        trocar_jogador_atual();
+        trocar_jogador_atual(); // Faz com que quem
         printf("\nO jogador %d utilizou a carta INVERTER e por isso jogara novamente.\n", jogador + 1);
     }
 
@@ -199,12 +201,17 @@ void carta_especial(int jogador, int numero_jogar)
 
     if (numero_jogar == COME_2)
     {
-        // efeito come2
+        printf("\n");
+        efeito_come_dois();
+        trocar_jogador_atual();
     }
 
     if (numero_jogar == COME_4)
     {
-        // efeito curinga
+        printf("\n");
+        efeito_come_quatro();
+        trocar_jogador_atual();
+        efeito_trocar_cor();
     }
 
     if (numero_jogar == TROCAR_COR)
@@ -217,6 +224,30 @@ void carta_especial(int jogador, int numero_jogar)
     {
         efeito_trocar_maos();
         printf("\nO jogador %d utilizou a carta TROCAR MAOS e por isso os baralhos foram trocados.\n", jogador + 1);
+    }
+}
+
+void efeito_come_dois()
+{
+    s_carta temp;
+    for (int i = 0; i < 2; i++)
+    {
+        desempilha(monte, &temp);
+        lista_inserir_final(mao, proximo_jogador, temp);
+        printf("O jogador %d comeu a carta: ", proximo_jogador + 1);
+        imprimir_carta(temp.cor, temp.numero, 2);
+    }
+}
+
+void efeito_come_quatro()
+{
+    s_carta temp;
+    for (int i = 0; i < 4; i++)
+    {
+        desempilha(monte, &temp);
+        lista_inserir_final(mao, proximo_jogador, temp);
+        printf("O jogador %d comeu a carta: ", proximo_jogador + 1);
+        imprimir_carta(temp.cor, temp.numero, 2);
     }
 }
 

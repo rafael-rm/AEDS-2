@@ -15,5 +15,7 @@ void reabastecer_monte();
 int calcular_pontuacao(int perdedor);
 void reiniciar_partida();
 void sortear_jogador_inicial();
+void efeito_come_dois();
+void efeito_come_quatro();
 
 #endif
