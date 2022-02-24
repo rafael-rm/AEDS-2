@@ -4,9 +4,8 @@
 #include "jogo.h"
 #include "logs.h"
 
-void manipular_jogo(int jogador)
+void manipular_jogo(int jogador) // Função usada para testes;
 {
-    // Função usada para testes
     mao[jogador].carta[0].cor = 0;
     mao[jogador].carta[0].numero = TROCAR_COR;
     mao[jogador].carta[1].cor = 0;
@@ -15,6 +14,7 @@ void manipular_jogo(int jogador)
     mao[jogador].carta[2].numero = TROCAR_COR;
     mao[jogador].tamanho = 3;
     mao[jogador].fim = mao[jogador].tamanho - 1;
+    player[jogador].pontuacao = 450;
 
     /*
     s_carta temp;
@@ -47,6 +47,20 @@ int possivel_jogar(int cor_jogar, int numero_jogar, s_carta carta_descarte, s_li
     int cor_descarte = carta_descarte.cor;
     int numero_descarte = carta_descarte.numero;
     int possibilidades_comuns = possibilidades_jogadas_comuns(lista, jogador, carta_descarte);
+
+    // Verifica se é a primeira jogada
+    if (primeira_jogada == TRUE)
+    {
+        if (cor_jogar == CURINGA || numero_jogar == COME_2 || numero_jogar == BLOQUEAR || numero_jogar == INVERTER)
+        {
+            return FALSE;
+        }
+        else
+        {
+            primeira_jogada = FALSE;
+            return TRUE;
+        }
+    }
 
     // Carta combina com a do descarte;
     if ((cor_jogar == cor_descarte || numero_jogar == numero_descarte || carta_descarte.numero == TROCAR_MAO) && cor_jogar != CURINGA)
@@ -84,59 +98,73 @@ int possibilidades_jogadas_total(s_lista lista[], int jogador, s_carta carta_des
     int possibilidades = 0;
     int possibilidades_curinga = 0;
 
-    // Cartas comuns;
-    for (int i = 0; i < lista[jogador].tamanho; i++)
+    if (primeira_jogada == TRUE)
     {
-        if (lista[jogador].carta[i].cor != CURINGA)
+        for (int i = 0; i < lista[jogador].tamanho; i++)
         {
-            if (lista[jogador].carta[i].cor == carta_descarte.cor && lista[jogador].carta[i].numero == carta_descarte.numero)
-            {
-                possibilidades++;
-            }
-            else if (lista[jogador].carta[i].cor == carta_descarte.cor)
-            {
-                possibilidades++;
-            }
-            else if (lista[jogador].carta[i].numero == carta_descarte.numero)
-            {
-                possibilidades++;
-            }
-            else if (carta_descarte.numero == TROCAR_MAO)
+            if (!(lista[jogador].carta[i].cor == CURINGA || lista[jogador].carta[i].numero == INVERTER || lista[jogador].carta[i].numero == BLOQUEAR || lista[jogador].carta[i].numero == COME_2))
             {
                 possibilidades++;
             }
         }
+        return possibilidades;
     }
-
-    // Cartas curingas;
-    for (int i = 0; i < lista[jogador].tamanho; i++)
+    else
     {
-
-        // COME 4 (NAO PODE SER JOGADA CASO TENHA UMA CARTA QUE COMBINE NO BARALHO)
-        if (possibilidades == 0)
+        // Cartas comuns;
+        for (int i = 0; i < lista[jogador].tamanho; i++)
         {
-            if (lista[jogador].carta[i].cor == CURINGA && lista[jogador].carta[i].numero == COME_4)
-                possibilidades_curinga++; // Usada outra variavel para nao atrapalhar a condição do primeiro if;
+            if (lista[jogador].carta[i].cor != CURINGA)
+            {
+                if (lista[jogador].carta[i].cor == carta_descarte.cor && lista[jogador].carta[i].numero == carta_descarte.numero)
+                {
+                    possibilidades++;
+                }
+                else if (lista[jogador].carta[i].cor == carta_descarte.cor)
+                {
+                    possibilidades++;
+                }
+                else if (lista[jogador].carta[i].numero == carta_descarte.numero)
+                {
+                    possibilidades++;
+                }
+                else if (carta_descarte.numero == TROCAR_MAO)
+                {
+                    possibilidades++;
+                }
+            }
         }
 
-        // TROCAR COR;
-        if (lista[jogador].carta[i].cor == CURINGA && lista[jogador].carta[i].numero == TROCAR_COR)
+        // Cartas curingas;
+        for (int i = 0; i < lista[jogador].tamanho; i++)
         {
-            possibilidades_curinga++;
-        }
 
-        // TROCAR MAO;
-        if (lista[jogador].tamanho != 1)
-        {
-            if (lista[jogador].carta[i].cor == CURINGA && lista[jogador].carta[i].numero == TROCAR_MAO)
+            // COME 4 (NAO PODE SER JOGADA CASO TENHA UMA CARTA QUE COMBINE NO BARALHO)
+            if (possibilidades == 0)
+            {
+                if (lista[jogador].carta[i].cor == CURINGA && lista[jogador].carta[i].numero == COME_4)
+                    possibilidades_curinga++; // Usada outra variavel para nao atrapalhar a condição do primeiro if;
+            }
+
+            // TROCAR COR;
+            if (lista[jogador].carta[i].cor == CURINGA && lista[jogador].carta[i].numero == TROCAR_COR)
+            {
                 possibilidades_curinga++;
+            }
+
+            // TROCAR MAO;
+            if (lista[jogador].tamanho != 1)
+            {
+                if (lista[jogador].carta[i].cor == CURINGA && lista[jogador].carta[i].numero == TROCAR_MAO)
+                    possibilidades_curinga++;
+            }
         }
+
+        // Isso ocorre para não haver uma falha verificação na jogada do +4;
+        possibilidades = possibilidades + possibilidades_curinga;
+
+        return possibilidades;
     }
-
-    // Isso ocorre para não haver uma falha verificação na jogada do +4;
-    possibilidades = possibilidades + possibilidades_curinga;
-
-    return possibilidades;
 }
 
 int possibilidades_jogadas_comuns(s_lista lista[], int jogador, s_carta carta_descarte) // Nao inclui as cartas curingas nas possibilidades;
@@ -189,7 +217,7 @@ void carta_especial(int jogador, int numero_jogar)
 {
     if (numero_jogar == INVERTER)
     {
-        trocar_jogador_atual(); // Faz com que quem
+        trocar_jogador_atual();
         printf("\nO jogador %d utilizou a carta INVERTER e por isso jogara novamente.\n", jogador + 1);
     }
 
@@ -350,9 +378,11 @@ void imprimir_carta(int cor, int numero, int modo)
             printf("AZUL - ");
         else if (cor == VERMELHO)
             printf("VERMELHO - ");
+        else if (cor == VAZIO)
+            printf("VAZIO - ");
 
         // ESTAMPAS
-        if (numero < 10)
+        if (numero <= 9 && numero >= 0)
             printf("NUMERO %d", numero);
         else if (numero == INVERTER)
             printf("INVERTER");
@@ -366,6 +396,8 @@ void imprimir_carta(int cor, int numero, int modo)
             printf("TROCA COR");
         else if (numero == TROCAR_MAO)
             printf("TROCA MAO");
+        else if (numero == VAZIO)
+            printf("VAZIO");
         printf("\n");
     }
 }
@@ -451,6 +483,7 @@ void reiniciar_partida()
     iniciar_monte();
     iniciar_maos();
     iniciar_descarte();
+    primeira_jogada = TRUE;
 
     // Sorteando o jogador que ira iniciar;
     sortear_jogador_inicial();

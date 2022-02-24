@@ -19,6 +19,7 @@
 #define TROCAR_MAO 15
 
 #define MAX_CARTAS 110
+#define VAZIO -100
 
 typedef struct carta
 {

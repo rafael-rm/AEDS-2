@@ -97,7 +97,8 @@ void iniciar_descarte()
 {
     descarte = inicializar_pilha();
     s_carta temp;
-    desempilha(monte, &temp);
+    temp.cor = VAZIO;
+    temp.numero = VAZIO;
     empilha(descarte, temp);
 }
 
