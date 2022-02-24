@@ -6,14 +6,18 @@
 
 void manipular_jogo(int jogador) // Função usada para testes;
 {
-    mao[jogador].carta[0].cor = 0;
-    mao[jogador].carta[0].numero = TROCAR_COR;
-    mao[jogador].carta[1].cor = 0;
-    mao[jogador].carta[1].numero = COME_4;
-    mao[jogador].carta[2].cor = 0;
-    mao[jogador].carta[2].numero = TROCAR_COR;
-    mao[jogador].tamanho = 3;
-    mao[jogador].fim = mao[jogador].tamanho - 1;
+    mao[0].carta[0].cor = 0;
+    mao[0].carta[0].numero = TROCAR_COR;
+    mao[1].carta[0].cor = 0;
+    mao[1].carta[0].numero = TROCAR_COR;
+    mao[0].carta[1].cor = 0;
+    mao[0].carta[1].numero = COME_4;
+    mao[1].carta[1].cor = 0;
+    mao[1].carta[1].numero = COME_4;
+    mao[0].tamanho = 2;
+    mao[0].fim = mao[jogador].tamanho - 1;
+    mao[1].tamanho = 2;
+    mao[1].fim = mao[jogador].tamanho - 1;
     player[jogador].pontuacao = 450;
 
     /*
@@ -160,7 +164,7 @@ int possibilidades_jogadas_total(s_lista lista[], int jogador, s_carta carta_des
             }
         }
 
-        // Isso ocorre para não haver uma falha verificação na jogada do +4;
+        // Isso ocorre para não haver uma falsa verificação na jogada do +4;
         possibilidades = possibilidades + possibilidades_curinga;
 
         return possibilidades;
@@ -238,7 +242,6 @@ void carta_especial(int jogador, int numero_jogar)
     {
         printf("\n");
         efeito_come_quatro();
-        trocar_jogador_atual();
         efeito_trocar_cor();
     }
 
@@ -269,13 +272,42 @@ void efeito_come_dois()
 
 void efeito_come_quatro()
 {
+
     s_carta temp;
-    for (int i = 0; i < 4; i++)
+    s_carta come4_rival;
+    come4_rival.cor = CURINGA;
+    come4_rival.numero = COME_4;
+    int rival_tem_come4 = FALSE;
+
+    for (int i = 0; i < mao[proximo_jogador].tamanho; i++) // Verifica se o proximo jogador possui a carta COME 4;
     {
-        desempilha(monte, &temp);
-        lista_inserir_final(mao, proximo_jogador, temp);
-        printf("O jogador %d comeu a carta: ", proximo_jogador + 1);
-        imprimir_carta(temp.cor, temp.numero, 2);
+
+        if (mao[proximo_jogador].carta[i].numero == COME_4) // Caso o proximo jogador possua, o jogador atual deve comer 8 cartas;
+        {
+            rival_tem_come4 = TRUE;
+            printf("\nO jogador %d possui uma carta CURINGA - COME 4 e por isso voce tera que comer 8 cartas.\n\n", proximo_jogador + 1);
+            remover_chave(mao, proximo_jogador, CURINGA, COME_4); // Remove o +4 carta do proximo jogador;
+            empilha(descarte, come4_rival);                       // Coloca o +4 do rival no monte;
+            for (int j = 0; j < 8; j++)                           // Faz com que o jogador inicial coma 8 cartas do monte;
+            {
+                desempilha(monte, &temp);
+                lista_inserir_final(mao, jogador_atual, temp);
+                printf("O jogador %d comeu a carta: ", jogador_atual + 1);
+                imprimir_carta(temp.cor, temp.numero, 2);
+            }
+        }
+    }
+
+    if (rival_tem_come4 == FALSE) // Caso o proximo jogador não tenha o COME 4 ele devera comer 4 cartas além de perder a vez;
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            desempilha(monte, &temp);
+            lista_inserir_final(mao, proximo_jogador, temp);
+            printf("O jogador %d comeu a carta: ", proximo_jogador + 1);
+            imprimir_carta(temp.cor, temp.numero, 2);
+        }
+        trocar_jogador_atual(); // Faz com que quem jogou o +4 consiga jogar novamente na sequencia;
     }
 }
 
