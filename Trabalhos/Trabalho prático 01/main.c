@@ -178,11 +178,10 @@ int main()
   {
     vencedor_jogo = JOGADOR_2;
     perdedor_jogo = JOGADOR_1;
-
   }
 
   system("cls");
-  printf("\nO jogador %d foi o primeiro a atingir 500 pontos e venceu o jogo!", vencedor_jogo);
+  printf("\nO jogador %d foi o primeiro a atingir 500 pontos e venceu o jogo!", vencedor_jogo+1);
   printf("\nObrigado por jogar =)\n");
   logs_finalizar_jogo(vencedor_jogo, perdedor_jogo, partidas_executadas);
   return 0;

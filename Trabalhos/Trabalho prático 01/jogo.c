@@ -289,6 +289,7 @@ void efeito_come_quatro()
             printf("\nO jogador %d possui uma carta CURINGA - COME 4 e por isso voce tera que comer 8 cartas.\n\n", proximo_jogador + 1);
             remover_chave(mao, proximo_jogador, CURINGA, COME_4); // Remove o +4 carta do proximo jogador;
             empilha(descarte, come4_rival);                       // Coloca o +4 do rival no monte;
+            logs_registrar_jogada(come4_rival.cor, come4_rival.numero, proximo_jogador);
             for (int j = 0; j < 8; j++)                           // Faz com que o jogador inicial coma 8 cartas do monte;
             {
                 desempilha(monte, &temp);
