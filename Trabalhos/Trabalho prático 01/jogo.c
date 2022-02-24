@@ -267,6 +267,7 @@ void efeito_come_dois()
         lista_inserir_final(mao, proximo_jogador, temp);
         printf("O jogador %d comeu a carta: ", proximo_jogador + 1);
         imprimir_carta(temp.cor, temp.numero, 2);
+        logs_registrar_compra(temp.cor, temp.numero, proximo_jogador);
     }
 }
 
@@ -294,6 +295,7 @@ void efeito_come_quatro()
                 lista_inserir_final(mao, jogador_atual, temp);
                 printf("O jogador %d comeu a carta: ", jogador_atual + 1);
                 imprimir_carta(temp.cor, temp.numero, 2);
+                logs_registrar_compra(temp.cor, temp.numero, jogador_atual);
             }
         }
     }
@@ -306,6 +308,7 @@ void efeito_come_quatro()
             lista_inserir_final(mao, proximo_jogador, temp);
             printf("O jogador %d comeu a carta: ", proximo_jogador + 1);
             imprimir_carta(temp.cor, temp.numero, 2);
+            logs_registrar_compra(temp.cor, temp.numero, proximo_jogador);
         }
         trocar_jogador_atual(); // Faz com que quem jogou o +4 consiga jogar novamente na sequencia;
     }
