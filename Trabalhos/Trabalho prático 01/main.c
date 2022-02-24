@@ -25,7 +25,7 @@ int main()
   sortear_jogador_inicial();
   logs_partida_iniciada(jogador_atual, partidas_executadas);
 
-  manipular_jogo(jogador_atual);
+  // manipular_jogo(jogador_atual);
 
   do
   {
@@ -151,19 +151,36 @@ int main()
     printf("\n\nAperte qualquer tecla para continuar");
     system("pause > nul");
 
-    reiniciar_partida();
-    partidas_executadas++;
-    logs_partida_iniciada(jogador_atual, partidas_executadas);
+    if (player[0].pontuacao < 500 && player[1].pontuacao < 500)
+    {
+      reiniciar_partida();
+      partidas_executadas++;
+      logs_partida_iniciada(jogador_atual, partidas_executadas);
 
-    system("cls");
-    printf("\nUma nova partida foi iniciada!");
-    printf("\nO jogador %d foi sorteado para iniciar as jogadas.", jogador_atual + 1);
-    printf("\n\nAperte qualquer tecla para continuar");
-    system("pause > nul");
-    system("cls");
+      system("cls");
+      printf("\nUma nova partida foi iniciada!");
+      printf("\nO jogador %d foi sorteado para iniciar as jogadas.", jogador_atual + 1);
+      printf("\n\nAperte qualquer tecla para continuar");
+      system("pause > nul");
+      system("cls");
+    }
 
-  } while (!(player[0].pontuacao == 500 || player[0].pontuacao == 500));
+  } while (!(player[0].pontuacao >= 500 || player[1].pontuacao >= 500));
 
+  int vencedor_jogo;
+
+  if (player[0].pontuacao == 500)
+  {
+    vencedor_jogo = JOGADOR_1;
+  }
+  else if (player[1].pontuacao == 500)
+  {
+    vencedor_jogo = JOGADOR_2;
+  }
+
+  system("cls");
+  printf("\nO jogador %d foi o primeiro a atingir 500 pontos e venceu o jogo!", vencedor_jogo);
+  printf("\nObrigado por jogar =)\n");
   logs_finalizar_jogo();
-
+  return 0;
 }
