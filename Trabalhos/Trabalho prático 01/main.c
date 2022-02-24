@@ -169,12 +169,12 @@ int main()
 
   int vencedor_jogo, perdedor_jogo;
 
-  if (player[0].pontuacao == 500)
+  if (player[0].pontuacao >= 500)
   {
     vencedor_jogo = JOGADOR_1;
     perdedor_jogo = JOGADOR_2;
   }
-  else if (player[1].pontuacao == 500)
+  else if (player[1].pontuacao >= 500)
   {
     vencedor_jogo = JOGADOR_2;
     perdedor_jogo = JOGADOR_1;
