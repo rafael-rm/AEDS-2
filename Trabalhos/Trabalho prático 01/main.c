@@ -17,15 +17,15 @@ int main()
   int partidas_executadas = 1;
 
   iniciar_logs();
-  menu_principal();
-  cadastrar();
+  //menu_principal();
+  //cadastrar();
   iniciar_monte();
   iniciar_maos();
   iniciar_descarte();
   sortear_jogador_inicial();
   logs_partida_iniciada(jogador_atual, partidas_executadas);
 
-  // manipular_jogo(jogador_atual);
+  manipular_jogo(jogador_atual);
 
   do
   {
@@ -167,20 +167,23 @@ int main()
 
   } while (!(player[0].pontuacao >= 500 || player[1].pontuacao >= 500));
 
-  int vencedor_jogo;
+  int vencedor_jogo, perdedor_jogo;
 
   if (player[0].pontuacao == 500)
   {
     vencedor_jogo = JOGADOR_1;
+    perdedor_jogo = JOGADOR_2;
   }
   else if (player[1].pontuacao == 500)
   {
     vencedor_jogo = JOGADOR_2;
+    perdedor_jogo = JOGADOR_1;
+
   }
 
   system("cls");
   printf("\nO jogador %d foi o primeiro a atingir 500 pontos e venceu o jogo!", vencedor_jogo);
   printf("\nObrigado por jogar =)\n");
-  logs_finalizar_jogo();
+  logs_finalizar_jogo(vencedor_jogo, perdedor_jogo, partidas_executadas);
   return 0;
 }

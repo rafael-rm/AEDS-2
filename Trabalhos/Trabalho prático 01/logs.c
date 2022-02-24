@@ -23,12 +23,15 @@ void iniciar_logs()
     fprintf(arquivo, "[%d/%d/%d - %d:%d:%d] - Arquivo de logs criado.\n", tempo->tm_mday, tempo->tm_mon + 1, tempo->tm_year + 1900, tempo->tm_hour, tempo->tm_min, tempo->tm_sec);
 }
 
-void logs_finalizar_jogo()
+void logs_finalizar_jogo(int vencedor, int perdedor, int partidas_executadas)
 {
     struct tm *tempo;
     time_t segundos;
     time(&segundos);
     tempo = localtime(&segundos);
+    fprintf(arquivo, "[%d/%d/%d - %d:%d:%d] - O jogador %d VENCEU o jogo com %d partidas ganhas e %d pontos marcados.\n", tempo->tm_mday, tempo->tm_mon + 1, tempo->tm_year + 1900, tempo->tm_hour, tempo->tm_min, tempo->tm_sec, vencedor, player[vencedor].partidas_vencidas, player[vencedor].pontuacao);
+    fprintf(arquivo, "[%d/%d/%d - %d:%d:%d] - O jogador %d PERDEU o jogo com %d partidas ganhas e %d pontos marcados.\n", tempo->tm_mday, tempo->tm_mon + 1, tempo->tm_year + 1900, tempo->tm_hour, tempo->tm_min, tempo->tm_sec, perdedor, player[perdedor].partidas_vencidas, player[perdedor].pontuacao);
+    fprintf(arquivo, "[%d/%d/%d - %d:%d:%d] - Total de partidas executadas: %d.\n", tempo->tm_mday, tempo->tm_mon + 1, tempo->tm_year + 1900, tempo->tm_hour, tempo->tm_min, tempo->tm_sec, partidas_executadas);
     fprintf(arquivo, "[%d/%d/%d - %d:%d:%d] - Jogo encerrado.\n", tempo->tm_mday, tempo->tm_mon + 1, tempo->tm_year + 1900, tempo->tm_hour, tempo->tm_min, tempo->tm_sec);
     fprintf(arquivo, "[%d/%d/%d - %d:%d:%d] - Encerrando arquivo de logs.\n", tempo->tm_mday, tempo->tm_mon + 1, tempo->tm_year + 1900, tempo->tm_hour, tempo->tm_min, tempo->tm_sec);
     fclose(arquivo);
