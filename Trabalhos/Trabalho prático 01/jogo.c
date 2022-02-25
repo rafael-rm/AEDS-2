@@ -208,7 +208,7 @@ int verificar_carta(s_lista lista[], int jogador, int cor, int numero)
     {
         for (int i = 0; i < lista[jogador].tamanho; i++)
         {
-            if (lista[jogador].carta[i].cor == cor && lista[jogador].carta[i].numero == numero)
+            if (lista[jogador].carta[i].cor == cor && lista[jogador].carta[i].numero == numero) // Verifica se o jogador possue a carta que esta tentando jogar;
             {
                 return TRUE;
             }
@@ -217,7 +217,7 @@ int verificar_carta(s_lista lista[], int jogador, int cor, int numero)
     }
 }
 
-void carta_especial(int jogador, int numero_jogar)
+void carta_especial(int jogador, int numero_jogar) // Responsável por executar/chamar os efeitos das cartas especiais;
 {
     if (numero_jogar == INVERTER)
     {
@@ -326,28 +326,29 @@ void efeito_trocar_cor()
         scanf("%d", &cor_nova);
         if (cor_nova < 1 || cor_nova > 4)
         {
-            printf("Insira uma cor valida de 1 a 4\n");
+            printf("(VERDE-1 AMARELO-2 AZUL-3 VERMELHO-4)\n");
+            printf("Insira uma cor valida de 1 a 4: \n");
         }
     } while (cor_nova < 1 || cor_nova > 4);
 
     desempilha(descarte, &temp);
-    temp.cor = cor_nova;
+    temp.cor = cor_nova; // Ao inves da carta jogada ter a cor "CURINGA", ela passa a ter a cor desejada pelo jogador;
     empilha(descarte, temp);
 }
 
 void efeito_trocar_maos()
 {
-    s_carta temp[MAX_CARTAS];
+    s_carta temp[MAX_CARTAS]; // Memoria alocada temporariamente;
     int tamanho_mao_0 = mao[0].tamanho;
     int tamanho_mao_1 = mao[1].tamanho;
     for (int i = 0; i < MAX_CARTAS; i++)
     {
-        temp[i] = mao[0].carta[i];
+        temp[i] = mao[0].carta[i]; // Todas as cartas do vetor 0 são passadas para o vetor auxiliar
     }
 
     for (int i = 0; i < MAX_CARTAS; i++)
     {
-        mao[0].carta[i] = mao[1].carta[i];
+        mao[0].carta[i] = mao[1].carta[i]; // As cartas do vetor 1 são passadas para o vetor 0;
     }
 
     mao[0].tamanho = tamanho_mao_1;
@@ -355,16 +356,12 @@ void efeito_trocar_maos()
 
     for (int i = 0; i < MAX_CARTAS; i++)
     {
-        mao[1].carta[i] = temp[i];
+        mao[1].carta[i] = temp[i]; // As cartas do vetor auxiliar (vetor 0) são passadas para o vetor 1;
     }
     mao[1].tamanho = tamanho_mao_0;
     mao[1].fim = tamanho_mao_0 - 1;
 
-    free(temp);
-
-    // aux = mao1
-    // mao1 = mao2
-    // mao2 = aux
+    free(temp); // Memoria temporaria liberada;
 }
 
 void imprimir_carta(int cor, int numero, int modo)
@@ -443,13 +440,13 @@ int calcular_pontuacao(int perdedor)
     int pontos = 0;
     for (int i = 0; i < mao[perdedor].tamanho; i++)
     {
-        if (mao[perdedor].carta[i].numero <= 9)
+        if (mao[perdedor].carta[i].numero <= 9) // CARTAS 0 A 9;
             pontos = pontos + 5;
 
-        if (mao[perdedor].carta[i].numero == INVERTER || mao[perdedor].carta[i].numero == BLOQUEAR || mao[perdedor].carta[i].numero == COME_2)
+        if (mao[perdedor].carta[i].numero == INVERTER || mao[perdedor].carta[i].numero == BLOQUEAR || mao[perdedor].carta[i].numero == COME_2) // BLOQUEAR E COME 2;
             pontos = pontos + 20;
 
-        if (mao[perdedor].carta[i].numero == TROCAR_MAO || mao[perdedor].carta[i].numero == TROCAR_COR || mao[perdedor].carta[i].numero == COME_4)
+        if (mao[perdedor].carta[i].numero == TROCAR_MAO || mao[perdedor].carta[i].numero == TROCAR_COR || mao[perdedor].carta[i].numero == COME_4) // TROCAR MAO E COME 4;
             pontos = pontos + 50;
     }
     return pontos;
@@ -459,13 +456,17 @@ void reabastecer_monte()
 {
 
     s_carta temp;
-    s_carta carta_topo = topo_pilha(descarte);
+    s_carta carta_topo = topo_pilha(descarte); // Salva a carta atual que se encontra no topo do descarte;
     s_carta cartas_embaralhar[MAX_CARTAS];
     int tamanho_descarte = descarte->tamanho;
 
     for (int i = 0; i < tamanho_descarte; i++)
     {
         desempilha(descarte, &temp);
+
+        if(temp.cor != CURINGA && (temp.numero == COME_4 || temp.numero == TROCAR_COR))
+            temp.cor == CURINGA; // Faz com que as cartas que tem a função de trocar cor voltem ao seu estado normal;
+
         cartas_embaralhar[i].cor = temp.cor;
         cartas_embaralhar[i].numero = temp.numero;
     }
@@ -499,7 +500,7 @@ void reabastecer_monte()
         }
     }
     free(cartas_embaralhar); // Memoria de uso temporario liberada;
-    empilha(descarte, carta_topo);
+    empilha(descarte, carta_topo); // Retorna a carta que anteriormente estava no topo do descarte;
     printf("\nO monte foi reabastecido com %d cartas.\n", tamanho_descarte);
 }
 

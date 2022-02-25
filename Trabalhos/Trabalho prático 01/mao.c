@@ -19,7 +19,7 @@ void iniciar_maos()
 {
     mao = criar_lista();
 
-    // Distribuir as 7 cartas iniciais (mao 1);
+    // Distribuir as 7 cartas iniciais para cada jogador;
     for (int i = 0; i < 2; i++)
     {
 
@@ -80,16 +80,6 @@ int remover_chave(s_lista lista[], int jogador, int cor, int numero)
         return FALSE;
     }
 }
-
-/*void imprimir_lista(s_lista lista[], int jogador)
-{
-    printf("\n");
-    for (int i = 0; i < lista[jogador].tamanho; i++)
-    {
-        printf("[%d] - %d, %d\n", i, lista[jogador].carta[i].cor, lista[jogador].carta[i].numero);
-    }
-    printf("\n");
-}*/
 
 void imprimir_lista(s_lista lista[], int jogador)
 {

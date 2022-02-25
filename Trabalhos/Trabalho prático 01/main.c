@@ -14,24 +14,24 @@ int main()
   int cor_jogar, numero_jogar;
   int jogada_valida;
   int status;
-  int partidas_executadas = 1;
+  int partidas_executadas = 0;
 
   iniciar_logs();
-  //menu_principal();
-  //cadastrar();
+  menu_principal();
+  cadastrar();
   iniciar_monte();
   iniciar_maos();
   iniciar_descarte();
   sortear_jogador_inicial();
   logs_partida_iniciada(jogador_atual, partidas_executadas);
 
-  manipular_jogo(jogador_atual);
+  //manipular_jogo(jogador_atual);
 
-  do
+  do // Encerra ao atingir 500 pontos;
   {
-    do
+    do // Encera a partida ao atingir 0 cartas;
     {
-      do
+      do // Verifica se a jogada foi válida;
       {
 
         carta_descarte = topo_pilha(descarte);
@@ -53,14 +53,16 @@ int main()
         printf("\n    DEBUG IGNORE\n");
         // REMOVER ACIMA NA VERSÃO FINAL
 
-        printf("\nJogador atual: %d", jogador_atual + 1);
-        printf("\nPossiveis jogadas: %d\n", possibilidades);
+        // INFOS
+        printf("\nJogador atual (%d): %s", jogador_atual, player[jogador_atual].nome);
+        printf("Possiveis jogadas: %d\n", possibilidades);
         printf("\n         Suas cartas");
         imprimir_lista(mao, jogador_atual);
         printf("\n");
         printf("Carta no descarte: ");
         imprimir_carta(carta_descarte.cor, carta_descarte.numero, 2);
 
+        // COMPRA
         if (possibilidades == 0) // Caso não tenha nenhuma possibilidade de jogar, o jogo inicia a compra automaticamente;
         {
           if (monte->tamanho == 0)
@@ -78,7 +80,7 @@ int main()
           logs_registrar_compra(carta_temporaria.cor, carta_temporaria.numero, jogador_atual);
           Sleep(3000);
         }
-        else
+        else // JOGAR
         {
 
           printf("Insira a carta que deseja jogar: ");
@@ -166,6 +168,10 @@ int main()
     }
 
   } while (!(player[0].pontuacao >= 500 || player[1].pontuacao >= 500));
+
+  /*
+  FINALIZA O JOGO QUANDO UM JOGADOR ATINGE 500 PONTOS OU MAIS
+  */
 
   int vencedor_jogo, perdedor_jogo;
 

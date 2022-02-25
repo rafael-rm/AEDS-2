@@ -78,8 +78,6 @@ void logs_encerramento_partida(int vencedor, int perdedor, int pontos)
     fprintf(arquivo, "[%d/%d/%d - %d:%d:%d] - O jogador %d foi o vencedor.\n", tempo->tm_mday, tempo->tm_mon + 1, tempo->tm_year + 1900, tempo->tm_hour, tempo->tm_min, tempo->tm_sec, vencedor + 1);
     fprintf(arquivo, "[%d/%d/%d - %d:%d:%d] - O jogador %d foi o perdedor.\n", tempo->tm_mday, tempo->tm_mon + 1, tempo->tm_year + 1900, tempo->tm_hour, tempo->tm_min, tempo->tm_sec, perdedor + 1);
     fprintf(arquivo, "[%d/%d/%d - %d:%d:%d] - Potuanção marcada pelo vencedor na partida: %d\n", tempo->tm_mday, tempo->tm_mon + 1, tempo->tm_year + 1900, tempo->tm_hour, tempo->tm_min, tempo->tm_sec, pontos);
-
-    // fprintf(arquivo, "[%d/%d/%d - %d:%d:%d] - \n", tempo->tm_mday, tempo->tm_mon + 1, tempo->tm_year + 1900, tempo->tm_hour, tempo->tm_min, tempo->tm_sec);
 }
 
 void logs_partida_iniciada(int jogador_sorteado, int partidas_executadas)

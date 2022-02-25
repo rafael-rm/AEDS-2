@@ -171,7 +171,7 @@ int pilha_vazia(s_pilha *pilha)
     }
 }
 
-s_carta topo_pilha(s_pilha *pilha)
+s_carta topo_pilha(s_pilha *pilha) // Retorna o topo da pilha, sem fazer sua remoção;
 {
     s_dados *temp;
     temp = pilha->topo;
