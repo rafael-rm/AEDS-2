@@ -10,13 +10,13 @@ void manipular_jogo(int jogador) // Função usada para testes;
     mao[0].carta[0].numero = TROCAR_COR;
     mao[1].carta[0].cor = 0;
     mao[1].carta[0].numero = TROCAR_COR;
-    mao[0].carta[1].cor = 0;
-    mao[0].carta[1].numero = COME_4;
-    mao[1].carta[1].cor = 0;
-    mao[1].carta[1].numero = COME_4;
-    mao[0].tamanho = 2;
+    mao[0].carta[0].cor = 0;
+    mao[0].carta[0].numero = COME_4;
+    mao[1].carta[0].cor = 0;
+    mao[1].carta[0].numero = COME_4;
+    mao[0].tamanho = 7;
     mao[0].fim = mao[jogador].tamanho - 1;
-    mao[1].tamanho = 2;
+    mao[1].tamanho = 7;
     mao[1].fim = mao[jogador].tamanho - 1;
     player[jogador].pontuacao = 450;
 
@@ -465,7 +465,7 @@ void reabastecer_monte()
         desempilha(descarte, &temp);
 
         if(temp.cor != CURINGA && (temp.numero == COME_4 || temp.numero == TROCAR_COR))
-            temp.cor == CURINGA; // Faz com que as cartas que tem a função de trocar cor voltem ao seu estado normal;
+            temp.cor = CURINGA; // Faz com que as cartas que tem a função de trocar cor voltem ao seu estado normal;
 
         cartas_embaralhar[i].cor = temp.cor;
         cartas_embaralhar[i].numero = temp.numero;
@@ -481,7 +481,7 @@ void reabastecer_monte()
         {
             posicao1 = rand() % tamanho_descarte;
             posicao2 = rand() % tamanho_descarte;
-        } while (posicao1 == posicao2); // Não permite que a carta na posição 0 seja movimentada;
+        } while (posicao1 == posicao2); // Não permite que a carta na mesma posição seja "movimentada"
         aux = cartas_embaralhar[posicao1];
         cartas_embaralhar[posicao1] = cartas_embaralhar[posicao2];
         cartas_embaralhar[posicao2] = aux;

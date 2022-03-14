@@ -6,7 +6,7 @@
 
 void iniciar_logs()
 {
-    arquivo = fopen("logs.txt", "w+"); // Cria um arquivo vazio para escrita (apaga o anterior)
+    arquivo = fopen("registros.log", "w+"); // Cria um arquivo vazio para escrita (apaga o anterior)
     if (arquivo == NULL)               // Erro no arquivo ou arquivo não encontrado
     {
         printf("\n [ERROR] Erro ao criar arquivo de log, processo encerrado.\n\n");

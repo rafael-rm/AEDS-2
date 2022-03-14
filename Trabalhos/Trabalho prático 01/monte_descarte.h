@@ -51,5 +51,6 @@ int pilha_cheia();
 int pilha_vazia(s_pilha *pilha);
 void iniciar_descarte();
 void liberar_pilha(s_pilha *pilha);
+s_carta topo_pilha(s_pilha *pilha);
 
 #endif

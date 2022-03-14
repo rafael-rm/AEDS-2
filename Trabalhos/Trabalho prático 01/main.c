@@ -38,7 +38,8 @@ int main()
         int possibilidades = possibilidades_jogadas_total(mao, jogador_atual, carta_descarte);
         system("cls");
 
-        // REMOVER ABAIXO NA VERSÃO FINAL
+        /* 
+        DEBUG - Usado para testes
         s_carta temp_compra = topo_pilha(monte);
         printf("\n    DEBUG IGNORE");
         printf("\nPartidas executadas: %d", partidas_executadas);
@@ -51,7 +52,7 @@ int main()
         printf("\nDescarte tamanho: %d", descarte->tamanho);
         printf("\nProxima compra: %d %d", temp_compra.cor, temp_compra.numero);
         printf("\n    DEBUG IGNORE\n");
-        // REMOVER ACIMA NA VERSÃO FINAL
+        */
 
         // INFOS
         printf("\nJogador atual (%d): %s", jogador_atual, player[jogador_atual].nome);
