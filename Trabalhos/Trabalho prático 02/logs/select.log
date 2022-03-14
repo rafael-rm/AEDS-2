@@ -1,0 +1,173 @@
+[SELEÇÃO] - Arquivo de logs criado.
+[SELEÇÃO] - ALEATORIO #1 (1000) - Tempo de processamento gasto: 0.0010s
+[SELEÇÃO] - ALEATORIO #1 (1000) - Movimentações de registros: 999
+[SELEÇÃO] - ALEATORIO #1 (1000) - Comparações de chaves: 499500
+[SELEÇÃO] - ALEATORIO #2 (1000) - Tempo de processamento gasto: 0.0010s
+[SELEÇÃO] - ALEATORIO #2 (1000) - Movimentações de registros: 999
+[SELEÇÃO] - ALEATORIO #2 (1000) - Comparações de chaves: 499500
+[SELEÇÃO] - ALEATORIO #3 (1000) - Tempo de processamento gasto: 0.0020s
+[SELEÇÃO] - ALEATORIO #3 (1000) - Movimentações de registros: 999
+[SELEÇÃO] - ALEATORIO #3 (1000) - Comparações de chaves: 499500
+[SELEÇÃO] - ALEATORIO #4 (1000) - Tempo de processamento gasto: 0.0020s
+[SELEÇÃO] - ALEATORIO #4 (1000) - Movimentações de registros: 999
+[SELEÇÃO] - ALEATORIO #4 (1000) - Comparações de chaves: 499500
+[SELEÇÃO] - ALEATORIO #5 (1000) - Tempo de processamento gasto: 0.0010s
+[SELEÇÃO] - ALEATORIO #5 (1000) - Movimentações de registros: 999
+[SELEÇÃO] - ALEATORIO #5 (1000) - Comparações de chaves: 499500
+[SELEÇÃO] - ALEATORIO #6 (1000) - Tempo de processamento gasto: 0.0030s
+[SELEÇÃO] - ALEATORIO #6 (1000) - Movimentações de registros: 999
+[SELEÇÃO] - ALEATORIO #6 (1000) - Comparações de chaves: 499500
+[SELEÇÃO] - ALEATORIO #7 (1000) - Tempo de processamento gasto: 0.0020s
+[SELEÇÃO] - ALEATORIO #7 (1000) - Movimentações de registros: 999
+[SELEÇÃO] - ALEATORIO #7 (1000) - Comparações de chaves: 499500
+[SELEÇÃO] - ALEATORIO #8 (1000) - Tempo de processamento gasto: 0.0010s
+[SELEÇÃO] - ALEATORIO #8 (1000) - Movimentações de registros: 999
+[SELEÇÃO] - ALEATORIO #8 (1000) - Comparações de chaves: 499500
+[SELEÇÃO] - ALEATORIO #9 (1000) - Tempo de processamento gasto: 0.0020s
+[SELEÇÃO] - ALEATORIO #9 (1000) - Movimentações de registros: 999
+[SELEÇÃO] - ALEATORIO #9 (1000) - Comparações de chaves: 499500
+[SELEÇÃO] - ALEATORIO #10 (1000) - Tempo de processamento gasto: 0.0010s
+[SELEÇÃO] - ALEATORIO #10 (1000) - Movimentações de registros: 999
+[SELEÇÃO] - ALEATORIO #10 (1000) - Comparações de chaves: 499500
+
+[SELEÇÃO] - ALEATORIO (1000) - Tempo médio de processamento gasto: 0.0016
+[SELEÇÃO] - ALEATORIO (1000) - Média de movimentações de registros: 999
+[SELEÇÃO] - ALEATORIO (1000) - Média de comparações de chaves: 499500
+
+[SELEÇÃO] - ALEATORIO #1 (10000) - Tempo de processamento gasto: 0.1510s
+[SELEÇÃO] - ALEATORIO #1 (10000) - Movimentações de registros: 9999
+[SELEÇÃO] - ALEATORIO #1 (10000) - Comparações de chaves: 49995000
+[SELEÇÃO] - ALEATORIO #2 (10000) - Tempo de processamento gasto: 0.1200s
+[SELEÇÃO] - ALEATORIO #2 (10000) - Movimentações de registros: 9999
+[SELEÇÃO] - ALEATORIO #2 (10000) - Comparações de chaves: 49995000
+[SELEÇÃO] - ALEATORIO #3 (10000) - Tempo de processamento gasto: 0.1200s
+[SELEÇÃO] - ALEATORIO #3 (10000) - Movimentações de registros: 9999
+[SELEÇÃO] - ALEATORIO #3 (10000) - Comparações de chaves: 49995000
+[SELEÇÃO] - ALEATORIO #4 (10000) - Tempo de processamento gasto: 0.2000s
+[SELEÇÃO] - ALEATORIO #4 (10000) - Movimentações de registros: 9999
+[SELEÇÃO] - ALEATORIO #4 (10000) - Comparações de chaves: 49995000
+[SELEÇÃO] - ALEATORIO #5 (10000) - Tempo de processamento gasto: 0.1330s
+[SELEÇÃO] - ALEATORIO #5 (10000) - Movimentações de registros: 9999
+[SELEÇÃO] - ALEATORIO #5 (10000) - Comparações de chaves: 49995000
+[SELEÇÃO] - ALEATORIO #6 (10000) - Tempo de processamento gasto: 0.1460s
+[SELEÇÃO] - ALEATORIO #6 (10000) - Movimentações de registros: 9999
+[SELEÇÃO] - ALEATORIO #6 (10000) - Comparações de chaves: 49995000
+[SELEÇÃO] - ALEATORIO #7 (10000) - Tempo de processamento gasto: 0.1820s
+[SELEÇÃO] - ALEATORIO #7 (10000) - Movimentações de registros: 9999
+[SELEÇÃO] - ALEATORIO #7 (10000) - Comparações de chaves: 49995000
+[SELEÇÃO] - ALEATORIO #8 (10000) - Tempo de processamento gasto: 0.1980s
+[SELEÇÃO] - ALEATORIO #8 (10000) - Movimentações de registros: 9999
+[SELEÇÃO] - ALEATORIO #8 (10000) - Comparações de chaves: 49995000
+[SELEÇÃO] - ALEATORIO #9 (10000) - Tempo de processamento gasto: 0.1470s
+[SELEÇÃO] - ALEATORIO #9 (10000) - Movimentações de registros: 9999
+[SELEÇÃO] - ALEATORIO #9 (10000) - Comparações de chaves: 49995000
+[SELEÇÃO] - ALEATORIO #10 (10000) - Tempo de processamento gasto: 0.1530s
+[SELEÇÃO] - ALEATORIO #10 (10000) - Movimentações de registros: 9999
+[SELEÇÃO] - ALEATORIO #10 (10000) - Comparações de chaves: 49995000
+
+[SELEÇÃO] - ALEATORIO (10000) - Tempo médio de processamento gasto: 0.1550
+[SELEÇÃO] - ALEATORIO (10000) - Média de movimentações de registros: 9999
+[SELEÇÃO] - ALEATORIO (10000) - Média de comparações de chaves: 50044950
+
+[SELEÇÃO] - ALEATORIO #1 (100000) - Tempo de processamento gasto: 13.6650s
+[SELEÇÃO] - ALEATORIO #1 (100000) - Movimentações de registros: 99999
+[SELEÇÃO] - ALEATORIO #1 (100000) - Comparações de chaves: 4999950000
+[SELEÇÃO] - ALEATORIO #2 (100000) - Tempo de processamento gasto: 11.4660s
+[SELEÇÃO] - ALEATORIO #2 (100000) - Movimentações de registros: 99999
+[SELEÇÃO] - ALEATORIO #2 (100000) - Comparações de chaves: 4999950000
+[SELEÇÃO] - ALEATORIO #3 (100000) - Tempo de processamento gasto: 11.9000s
+[SELEÇÃO] - ALEATORIO #3 (100000) - Movimentações de registros: 99999
+[SELEÇÃO] - ALEATORIO #3 (100000) - Comparações de chaves: 4999950000
+[SELEÇÃO] - ALEATORIO #4 (100000) - Tempo de processamento gasto: 15.5480s
+[SELEÇÃO] - ALEATORIO #4 (100000) - Movimentações de registros: 99999
+[SELEÇÃO] - ALEATORIO #4 (100000) - Comparações de chaves: 4999950000
+[SELEÇÃO] - ALEATORIO #5 (100000) - Tempo de processamento gasto: 11.5320s
+[SELEÇÃO] - ALEATORIO #5 (100000) - Movimentações de registros: 99999
+[SELEÇÃO] - ALEATORIO #5 (100000) - Comparações de chaves: 4999950000
+[SELEÇÃO] - ALEATORIO #6 (100000) - Tempo de processamento gasto: 12.4260s
+[SELEÇÃO] - ALEATORIO #6 (100000) - Movimentações de registros: 99999
+[SELEÇÃO] - ALEATORIO #6 (100000) - Comparações de chaves: 4999950000
+[SELEÇÃO] - ALEATORIO #7 (100000) - Tempo de processamento gasto: 14.8090s
+[SELEÇÃO] - ALEATORIO #7 (100000) - Movimentações de registros: 99999
+[SELEÇÃO] - ALEATORIO #7 (100000) - Comparações de chaves: 4999950000
+[SELEÇÃO] - ALEATORIO #8 (100000) - Tempo de processamento gasto: 11.9070s
+[SELEÇÃO] - ALEATORIO #8 (100000) - Movimentações de registros: 99999
+[SELEÇÃO] - ALEATORIO #8 (100000) - Comparações de chaves: 4999950000
+[SELEÇÃO] - ALEATORIO #9 (100000) - Tempo de processamento gasto: 12.8730s
+[SELEÇÃO] - ALEATORIO #9 (100000) - Movimentações de registros: 99999
+[SELEÇÃO] - ALEATORIO #9 (100000) - Comparações de chaves: 4999950000
+[SELEÇÃO] - ALEATORIO #10 (100000) - Tempo de processamento gasto: 11.1960s
+[SELEÇÃO] - ALEATORIO #10 (100000) - Movimentações de registros: 99999
+[SELEÇÃO] - ALEATORIO #10 (100000) - Comparações de chaves: 4999950000
+
+[SELEÇÃO] - ALEATORIO (100000) - Tempo médio de processamento gasto: 12.7322
+[SELEÇÃO] - ALEATORIO (100000) - Média de movimentações de registros: 99999
+[SELEÇÃO] - ALEATORIO (100000) - Média de comparações de chaves: 5004954495
+
+[SELEÇÃO] - ALEATORIO #1 (200000) - Tempo de processamento gasto: 45.6470s
+[SELEÇÃO] - ALEATORIO #1 (200000) - Movimentações de registros: 199999
+[SELEÇÃO] - ALEATORIO #1 (200000) - Comparações de chaves: 19999900000
+[SELEÇÃO] - ALEATORIO #2 (200000) - Tempo de processamento gasto: 46.0480s
+[SELEÇÃO] - ALEATORIO #2 (200000) - Movimentações de registros: 199999
+[SELEÇÃO] - ALEATORIO #2 (200000) - Comparações de chaves: 19999900000
+[SELEÇÃO] - ALEATORIO #3 (200000) - Tempo de processamento gasto: 45.6790s
+[SELEÇÃO] - ALEATORIO #3 (200000) - Movimentações de registros: 199999
+[SELEÇÃO] - ALEATORIO #3 (200000) - Comparações de chaves: 19999900000
+[SELEÇÃO] - ALEATORIO #4 (200000) - Tempo de processamento gasto: 52.3980s
+[SELEÇÃO] - ALEATORIO #4 (200000) - Movimentações de registros: 199999
+[SELEÇÃO] - ALEATORIO #4 (200000) - Comparações de chaves: 19999900000
+[SELEÇÃO] - ALEATORIO #5 (200000) - Tempo de processamento gasto: 46.7750s
+[SELEÇÃO] - ALEATORIO #5 (200000) - Movimentações de registros: 199999
+[SELEÇÃO] - ALEATORIO #5 (200000) - Comparações de chaves: 19999900000
+[SELEÇÃO] - ALEATORIO #6 (200000) - Tempo de processamento gasto: 52.1750s
+[SELEÇÃO] - ALEATORIO #6 (200000) - Movimentações de registros: 199999
+[SELEÇÃO] - ALEATORIO #6 (200000) - Comparações de chaves: 19999900000
+[SELEÇÃO] - ALEATORIO #7 (200000) - Tempo de processamento gasto: 53.3060s
+[SELEÇÃO] - ALEATORIO #7 (200000) - Movimentações de registros: 199999
+[SELEÇÃO] - ALEATORIO #7 (200000) - Comparações de chaves: 19999900000
+[SELEÇÃO] - ALEATORIO #8 (200000) - Tempo de processamento gasto: 52.7910s
+[SELEÇÃO] - ALEATORIO #8 (200000) - Movimentações de registros: 199999
+[SELEÇÃO] - ALEATORIO #8 (200000) - Comparações de chaves: 19999900000
+[SELEÇÃO] - ALEATORIO #9 (200000) - Tempo de processamento gasto: 50.6620s
+[SELEÇÃO] - ALEATORIO #9 (200000) - Movimentações de registros: 199999
+[SELEÇÃO] - ALEATORIO #9 (200000) - Comparações de chaves: 19999900000
+[SELEÇÃO] - ALEATORIO #10 (200000) - Tempo de processamento gasto: 48.5830s
+[SELEÇÃO] - ALEATORIO #10 (200000) - Movimentações de registros: 199999
+[SELEÇÃO] - ALEATORIO #10 (200000) - Comparações de chaves: 19999900000
+
+[SELEÇÃO] - ALEATORIO (200000) - Tempo médio de processamento gasto: 49.4064
+[SELEÇÃO] - ALEATORIO (200000) - Média de movimentações de registros: 199999
+[SELEÇÃO] - ALEATORIO (200000) - Média de comparações de chaves: 20500395449
+
+
+
+[SELEÇÃO] - ORDENADO (1000) - Tempo de processamento gasto: 0.0010s
+[SELEÇÃO] - ORDENADO (1000) - Movimentações de registros: 999
+[SELEÇÃO] - ORDENADO (1000) - Comparações de chaves: 499500
+[SELEÇÃO] - ORDENADO (10000) - Tempo de processamento gasto: 0.1110s
+[SELEÇÃO] - ORDENADO (10000) - Movimentações de registros: 9999
+[SELEÇÃO] - ORDENADO (10000) - Comparações de chaves: 49995000
+[SELEÇÃO] - ORDENADO (100000) - Tempo de processamento gasto: 11.9630s
+[SELEÇÃO] - ORDENADO (100000) - Movimentações de registros: 99999
+[SELEÇÃO] - ORDENADO (100000) - Comparações de chaves: 4999950000
+[SELEÇÃO] - ORDENADO (200000) - Tempo de processamento gasto: 53.8370s
+[SELEÇÃO] - ORDENADO (200000) - Movimentações de registros: 199999
+[SELEÇÃO] - ORDENADO (200000) - Comparações de chaves: 19999900000
+
+
+
+[SELEÇÃO] - INV ORDENADO (1000) - Tempo de processamento gasto: 0.0010s
+[SELEÇÃO] - INV ORDENADO (1000) - Movimentações de registros: 999
+[SELEÇÃO] - INV ORDENADO (1000) - Comparações de chaves: 499500
+[SELEÇÃO] - INV ORDENADO (10000) - Tempo de processamento gasto: 0.1260s
+[SELEÇÃO] - INV ORDENADO (10000) - Movimentações de registros: 9999
+[SELEÇÃO] - INV ORDENADO (10000) - Comparações de chaves: 49995000
+[SELEÇÃO] - INV ORDENADO (100000) - Tempo de processamento gasto: 11.8290s
+[SELEÇÃO] - INV ORDENADO (100000) - Movimentações de registros: 99999
+[SELEÇÃO] - INV ORDENADO (100000) - Comparações de chaves: 4999950000
+[SELEÇÃO] - INV ORDENADO (200000) - Tempo de processamento gasto: 54.0370s
+[SELEÇÃO] - INV ORDENADO (200000) - Movimentações de registros: 199999
+[SELEÇÃO] - INV ORDENADO (200000) - Comparações de chaves: 19999900000
+
+
+[SELEÇÃO] - TOTAL - Tempo de processamento gasto: 755.0520s
