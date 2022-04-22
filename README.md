@@ -10,11 +10,11 @@ Aprendizados de Algoritimos e Estruturas de Dados II no segundo período de Enge
 * Ponteiros; 
 * Alocação dinâmica de memória; 
 * Introdução a análise de complexidade de algoritmos: notações O, Q e W; 
-* Estruturas lineares: listas, representação por arrays e por encadeamento, pilhas e filas. 
-* Algoritmos de busca e ordenação em estruturas lineares. 
-* Encadeamento em listas e em tabelas. 
-* Árvores: formas de representação, recursão em árvores, árvores binárias, árvores binárias de busca, listas de prioridades, árvores balanceadas.
-* Práticas de Laboratório
+* Estruturas lineares: listas, representação por arrays e por encadeamento, pilhas e filas;
+* Algoritmos de busca e ordenação em estruturas lineares;
+* Encadeamento em listas e em tabelas; 
+* Árvores: formas de representação, recursão em árvores, árvores binárias, árvores binárias de busca, listas de prioridades, árvores balanceadas;
+* Práticas de Laboratório;
 
 _Docente: [Edwaldo Soares Rodrigues](http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4454835D2)_
 
